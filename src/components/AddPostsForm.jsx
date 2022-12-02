@@ -1,15 +1,14 @@
 import { useState} from 'react';
-import { useDispatch } from 'react-redux';
-import { nanoid } from "@reduxjs/toolkit";
-
+import { useDispatch, useSelector } from 'react-redux';
 import { postAdded } from '../features/posts/postsSlice';
 
 function AddPostsForm() {
 
-    const [title, setTitle ] = useState('');
-    const [ content, setContent ] = useState('');
-
     const dispatch = useDispatch();
+
+    const [ title, setTitle ] = useState('');
+    const [ content, setContent ] = useState('');
+    const [ userId, setUserId ] = useState();
 
     const onTitleChanged = e => setTitle(e.target.value);
     const onContentChanged = e => setContent(e.target.value);
@@ -36,6 +35,7 @@ function AddPostsForm() {
             value={title}
             onChange={onTitleChanged}
             />  
+          
             <label htmlFor='postContent'>Content:</label>
             <input
             type="text"
