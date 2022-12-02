@@ -11,7 +11,7 @@ function AddPostsForm() {
 
     const dispatch = useDispatch();
 
-    const onTitleChanged = e => setTitle(e.targe.value);
+    const onTitleChanged = e => setTitle(e.target.value);
     const onContentChanged = e => setContent(e.target.value);
 
     const onSavePostClicked = () => {
@@ -31,7 +31,7 @@ function AddPostsForm() {
   return (
     <section>
         <h2>Add a New Post</h2>
-        <from>
+        <form>
             <label htmlFor='postTitle'>Post Title:</label>
             <input
             type="text"
@@ -52,7 +52,7 @@ function AddPostsForm() {
             type="button"
             onClick={onSavePostClicked}
             >Save Post</button>
-        </from>
+        </form>
     </section>
   )
 }
