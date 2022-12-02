@@ -1,8 +1,9 @@
 import { useSelect, useSelector } from 'react-redux';
+import { selectAllPosts } from '../features/posts/postsSlice';
 
 function PostsLists() {
 
-    const posts = useSelector(state => state.posts);
+    const posts = useSelector(selectAllPosts);
 
     const renderedPosts = posts.map(post => (
         <article key={posts.id}>
